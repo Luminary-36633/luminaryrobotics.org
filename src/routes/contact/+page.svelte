@@ -52,7 +52,7 @@
   subtitle="Sponsors, mentors, students, and anyone with a question about the team."
 />
 
-<section class="section">
+<section class="section contact-section">
   <div class="container">
     <div class="contact-grid">
       <!-- Form -->
@@ -171,6 +171,9 @@
 </section>
 
 <style>
+  /* Sits close under the page hero rather than a full section gap */
+  .contact-section { padding-top: var(--space-6); }
+
   .contact-grid {
     display: grid;
     grid-template-columns: 3fr 2fr;

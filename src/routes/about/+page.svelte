@@ -38,9 +38,7 @@
 <PageHero
   label="About Us"
   title="Who We Are"
-  subtitle="Luminary Robotics is FTC Team 36633, a student-led rookie team competing in Central Texas."
 />
-
 
 <!-- ── Team: circular layout (desktop) ─────────────────────── -->
 <section class="section team-circle-section" id="team">
