@@ -24,10 +24,8 @@
   <meta name="description" content="BioBuzz Scorer, a scoring app for the FIRST Tech Challenge BIOBUZZ season, made by FTC Team 36633." />
 </svelte:head>
 
-<!-- Light captures show in the light theme, dark captures in the dark theme. -->
 {#snippet shot(name, alt, loading)}
-  <img class="shot shot--light" src="/images/scorer/{name}-light.png" {alt} width="1600" height="783" {loading} />
-  <img class="shot shot--dark" src="/images/scorer/{name}-dark.png" {alt} width="1600" height="783" {loading} />
+  <img class="shot" src="/images/scorer/{name}.png" {alt} width="1600" height="783" {loading} />
 {/snippet}
 
 {#snippet storeButtons()}
@@ -214,10 +212,6 @@
     height: auto;
     filter: drop-shadow(0 18px 30px rgba(0, 0, 0, 0.18));
   }
-
-  .shot--dark { display: none; }
-  :global([data-theme='dark']) .shot--light { display: none; }
-  :global([data-theme='dark']) .shot--dark { display: block; }
 
   .screens {
     display: grid;
