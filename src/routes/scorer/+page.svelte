@@ -6,18 +6,11 @@
   const APP_STORE_URL = '';
   const GOOGLE_PLAY_URL = '';
 
-  const features = [
-    { title: 'Live Board', desc: 'Tap to score both alliances as the match plays.' },
-    { title: 'Match Timer', desc: 'Auto, transition, and TeleOp with field sounds.' },
-    { title: 'Calculator', desc: 'Add up any score after the match.' },
-    { title: 'History', desc: 'Saved matches and charts over time.' },
-  ];
-
   const screens = [
-    { src: '/images/scorer/home.jpg', caption: 'Home' },
-    { src: '/images/scorer/timer.jpg', caption: 'Timer' },
-    { src: '/images/scorer/calculator.jpg', caption: 'Calculator' },
-    { src: '/images/scorer/analysis.jpg', caption: 'Analysis' },
+    { src: '/images/scorer/home.png', title: 'Home', desc: 'Start a game in one tap.' },
+    { src: '/images/scorer/timer.png', title: 'Timer', desc: 'Auto, transition, and TeleOp with field sounds.' },
+    { src: '/images/scorer/calculator.png', title: 'Calculator', desc: 'Add up a score after the match.' },
+    { src: '/images/scorer/analysis.png', title: 'Analysis', desc: 'Saved matches and charts over time.' },
   ];
 
   function placeholder(event, url) {
@@ -57,7 +50,7 @@
       aria-label="Get it on Google Play"
       onclick={(e) => placeholder(e, GOOGLE_PLAY_URL)}
     >
-      <svg class="store__icon" viewBox="0 0 24 24" aria-hidden="true">
+      <svg class="store__icon store__icon--android" viewBox="0 0 24 24" aria-hidden="true">
         <path
           fill="currentColor"
           fill-rule="evenodd"
@@ -83,32 +76,12 @@
 <section class="hero">
   <div class="hero__inner container">
     <div class="hero__content">
-      <p class="hero__label">FTC Team 36633</p>
       <h1 class="hero__title">BioBuzz Scorer</h1>
-      <p class="hero__intro">
-        Score <em>FIRST</em> Tech Challenge BIOBUZZ matches from your phone. No account
-        needed.
-      </p>
+      <p class="hero__intro">Easily score matches on your phone.</p>
       {@render storeButtons()}
     </div>
     <div class="hero__visual">
-      <figure class="device">
-        <img src="/images/scorer/board.jpg" alt="The BioBuzz Scorer scoring board" loading="eager" />
-      </figure>
-    </div>
-  </div>
-</section>
-
-<!-- ── Features ─────────────────────────────────────────────── -->
-<section class="section--sm">
-  <div class="container">
-    <div class="features">
-      {#each features as feature}
-        <div class="feature card">
-          <h3 class="feature__title">{feature.title}</h3>
-          <p class="feature__desc">{feature.desc}</p>
-        </div>
-      {/each}
+      <img class="shot" src="/images/scorer/board.png" alt="The BioBuzz Scorer scoring board" width="1600" height="783" loading="eager" />
     </div>
   </div>
 </section>
@@ -116,17 +89,14 @@
 <!-- ── Screens ──────────────────────────────────────────────── -->
 <section class="section">
   <div class="container">
-    <div class="section-header">
-      <span class="section-header__label">Screens</span>
-      <h2 class="section-header__title">Inside the App</h2>
-    </div>
     <div class="screens">
       {#each screens as screen}
         <figure class="screen">
-          <div class="device device--sm">
-            <img src={screen.src} alt="BioBuzz Scorer {screen.caption} screen" loading="lazy" />
-          </div>
-          <figcaption class="screen__cap">{screen.caption}</figcaption>
+          <img class="shot" src={screen.src} alt="BioBuzz Scorer {screen.title} screen" width="1600" height="783" loading="lazy" />
+          <figcaption>
+            <span class="screen__title">{screen.title}</span>
+            <span class="screen__desc">{screen.desc}</span>
+          </figcaption>
         </figure>
       {/each}
     </div>
@@ -136,10 +106,7 @@
 <!-- ── Download ─────────────────────────────────────────────── -->
 <section class="section--sm download">
   <div class="container">
-    <div class="download__inner">
-      <h2 class="download__title">Get BioBuzz Scorer</h2>
-      {@render storeButtons()}
-    </div>
+    {@render storeButtons()}
     <p class="legal">
       <em>FIRST</em>®, <em>FIRST</em>® Tech Challenge, FTC®, BIOBUZZ™, and all accompanying
       logos are trademarks of For Inspiration and Recognition of Science and Technology
@@ -169,15 +136,6 @@
     padding-bottom: var(--space-8);
   }
 
-  .hero__label {
-    font-size: var(--text-xs);
-    font-weight: 600;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--accent-blue);
-    margin-bottom: var(--space-4);
-  }
-
   .hero__title {
     font-family: var(--font-heading);
     font-size: clamp(2.5rem, 5vw, var(--text-5xl));
@@ -195,8 +153,6 @@
     max-width: 440px;
     margin-bottom: var(--space-7);
   }
-
-  .hero__intro em { font-style: italic; }
 
   /* ── Store buttons ────────────────────────── */
   .stores {
@@ -244,89 +200,52 @@
     letter-spacing: -0.01em;
   }
 
-  /* ── Device frame ─────────────────────────── */
-  .device {
-    margin: 0;
-    padding: 2.2%;
-    background: #0a0a0c;
-    border: 1px solid #2a2a33;
-    border-radius: 11% / 24%;
-    box-shadow:
-      0 0 0 5px #1b1b21,
-      0 30px 60px -20px rgba(0, 0, 0, 0.45);
-  }
+  .store__icon--android { color: #3ddc84; }
 
-  .device img {
+  /* ── Screenshots ──────────────────────────── */
+  .shot {
     width: 100%;
     height: auto;
-    border-radius: 9% / 20%;
+    filter: drop-shadow(0 18px 30px rgba(0, 0, 0, 0.18));
   }
 
-  .device--sm {
-    box-shadow:
-      0 0 0 3px #1b1b21,
-      0 16px 32px -16px rgba(0, 0, 0, 0.4);
-  }
-
-  /* ── Features ─────────────────────────────── */
-  .features {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: var(--space-4);
-  }
-
-  .feature__title {
-    font-size: var(--text-lg);
-    margin-bottom: var(--space-2);
-  }
-
-  .feature__desc {
-    font-size: var(--text-sm);
-    color: var(--text-2);
-    line-height: 1.6;
-  }
-
-  /* ── Screens ──────────────────────────────── */
   .screens {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-8) var(--space-7);
+    gap: var(--space-9) var(--space-7);
   }
 
   .screen { margin: 0; }
 
-  .screen__cap {
-    margin-top: var(--space-4);
+  .screen figcaption {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-1);
+    margin-top: var(--space-5);
     text-align: center;
-    font-size: var(--text-xs);
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--text-3);
+  }
+
+  .screen__title {
+    font-size: var(--text-lg);
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  .screen__desc {
+    font-size: var(--text-sm);
+    color: var(--text-2);
   }
 
   /* ── Download ─────────────────────────────── */
   .download { padding-bottom: var(--space-10); }
 
-  .download__inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: var(--space-6);
-    flex-wrap: wrap;
-    padding: var(--space-7);
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-  }
+  .download .stores { justify-content: center; }
 
-  .download__title {
-    font-size: var(--text-2xl);
-    font-weight: 700;
-  }
 
   .legal {
-    margin-top: var(--space-5);
+    margin: var(--space-8) auto 0;
+    text-align: center;
     font-size: var(--text-xs);
     color: var(--text-3);
     line-height: 1.6;
@@ -339,12 +258,9 @@
   @media (max-width: 900px) {
     .hero { min-height: auto; }
     .hero__inner { grid-template-columns: 1fr; gap: var(--space-7); }
-    .features { grid-template-columns: repeat(2, 1fr); }
   }
 
   @media (max-width: 600px) {
-    .features, .screens { grid-template-columns: 1fr; }
-    .download__inner { padding: var(--space-6) var(--space-5); }
-    .device { box-shadow: 0 0 0 3px #1b1b21, 0 16px 32px -16px rgba(0, 0, 0, 0.4); }
+    .screens { grid-template-columns: 1fr; gap: var(--space-8); }
   }
 </style>
