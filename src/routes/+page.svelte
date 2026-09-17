@@ -82,26 +82,6 @@
   </div>
 </section>
 
-<!-- ── Sponsors ─────────────────────────────────────────────── -->
-<section class="section--sm sponsors">
-  <div class="container">
-    <div class="sponsors__inner">
-      <div>
-        <span class="section-header__label">Partners</span>
-        <h2 class="sponsors__title">We're Looking for Sponsors</h2>
-        <p class="sponsors__text">
-          This is our first season, so we're starting from nothing on funding. Sponsorships
-          pay for parts, tools, and competition fees, and your name goes on the robot.
-        </p>
-      </div>
-      <div class="sponsors__actions">
-        <a href="/sponsors" class="btn btn--outline btn--sm">Sponsorship Tiers</a>
-        <a href="/contact" class="btn btn--ghost btn--sm">Contact Us</a>
-      </div>
-    </div>
-  </div>
-</section>
-
 <style>
   /* ── Hero ─────────────────────────────────── */
   .hero {
@@ -244,40 +224,6 @@
     flex-shrink: 0;
   }
 
-  /* ── Sponsors ─────────────────────────────── */
-  .sponsors__inner {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    gap: var(--space-8);
-    padding: var(--space-7);
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    flex-wrap: wrap;
-  }
-
-  .sponsors__title {
-    font-size: var(--text-xl);
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    color: var(--text);
-    margin-bottom: var(--space-3);
-  }
-
-  .sponsors__text {
-    font-size: var(--text-sm);
-    color: var(--text-2);
-    line-height: 1.75;
-    max-width: 620px;
-  }
-
-  .sponsors__actions {
-    display: flex;
-    gap: var(--space-2);
-    flex-shrink: 0;
-  }
-
   @media (max-width: 900px) {
     .hero { min-height: auto; }
     .hero__inner { grid-template-columns: 1fr; gap: var(--space-7); }
@@ -286,7 +232,6 @@
 
   @media (max-width: 600px) {
     .hero__title { font-size: var(--text-3xl); }
-    .sponsors__inner { padding: var(--space-6) var(--space-5); }
     .experience__names li { flex-direction: column; gap: 2px; }
   }
 </style>

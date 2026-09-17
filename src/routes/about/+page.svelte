@@ -174,7 +174,7 @@
       </p>
       <p>
         We also want to be useful to newer teams. We all learned FTC from somebody else,
-        so we answer questions when people ask.
+        so we love to mentor.
       </p>
     </div>
   </section>
