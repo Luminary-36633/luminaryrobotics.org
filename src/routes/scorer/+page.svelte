@@ -7,10 +7,10 @@
   const GOOGLE_PLAY_URL = '';
 
   const screens = [
-    { src: '/images/scorer/home.png', title: 'Home', desc: 'Start a game in one tap.' },
-    { src: '/images/scorer/timer.png', title: 'Timer', desc: 'Auto, transition, and TeleOp with field sounds.' },
-    { src: '/images/scorer/calculator.png', title: 'Calculator', desc: 'Add up a score after the match.' },
-    { src: '/images/scorer/analysis.png', title: 'Analysis', desc: 'Saved matches and charts over time.' },
+    { name: 'home', title: 'Home', desc: 'Start a game in one tap.' },
+    { name: 'timer', title: 'Timer', desc: 'Auto, transition, and TeleOp with field sounds.' },
+    { name: 'calculator', title: 'Calculator', desc: 'Add up a score after the match.' },
+    { name: 'analysis', title: 'Analysis', desc: 'Saved matches and charts over time.' },
   ];
 
   function placeholder(event, url) {
@@ -23,6 +23,12 @@
   <meta name="robots" content="noindex, nofollow" />
   <meta name="description" content="BioBuzz Scorer, a scoring app for the FIRST Tech Challenge BIOBUZZ season, made by FTC Team 36633." />
 </svelte:head>
+
+<!-- Light captures show in the light theme, dark captures in the dark theme. -->
+{#snippet shot(name, alt, loading)}
+  <img class="shot shot--light" src="/images/scorer/{name}-light.png" {alt} width="1600" height="783" {loading} />
+  <img class="shot shot--dark" src="/images/scorer/{name}-dark.png" {alt} width="1600" height="783" {loading} />
+{/snippet}
 
 {#snippet storeButtons()}
   <div class="stores">
@@ -81,7 +87,7 @@
       {@render storeButtons()}
     </div>
     <div class="hero__visual">
-      <img class="shot" src="/images/scorer/board.png" alt="The BioBuzz Scorer scoring board" width="1600" height="783" loading="eager" />
+      {@render shot('board', 'The BioBuzz Scorer scoring board', 'eager')}
     </div>
   </div>
 </section>
@@ -92,7 +98,7 @@
     <div class="screens">
       {#each screens as screen}
         <figure class="screen">
-          <img class="shot" src={screen.src} alt="BioBuzz Scorer {screen.title} screen" width="1600" height="783" loading="lazy" />
+          {@render shot(screen.name, `BioBuzz Scorer ${screen.title} screen`, 'lazy')}
           <figcaption>
             <span class="screen__title">{screen.title}</span>
             <span class="screen__desc">{screen.desc}</span>
@@ -208,6 +214,10 @@
     height: auto;
     filter: drop-shadow(0 18px 30px rgba(0, 0, 0, 0.18));
   }
+
+  .shot--dark { display: none; }
+  :global([data-theme='dark']) .shot--light { display: none; }
+  :global([data-theme='dark']) .shot--dark { display: block; }
 
   .screens {
     display: grid;
