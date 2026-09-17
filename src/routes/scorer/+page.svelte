@@ -1,10 +1,5 @@
 <script>
-  // Unlisted page: not in the nav, footer, or robots.txt, and marked noindex.
-  // Reachable only by typing luminaryrobotics.org/scorer.
-
-  // Placeholder store links. Swap in the real URLs once the listings are live.
-  const APP_STORE_URL = '';
-  const GOOGLE_PLAY_URL = '';
+  const APP_STORE_URL = 'https://apps.apple.com/app/id6811494340';
 
   const screens = [
     { name: 'home', title: 'Home', desc: 'Start a game in one tap.' },
@@ -12,15 +7,10 @@
     { name: 'calculator', title: 'Calculator', desc: 'Add up a score after the match.' },
     { name: 'analysis', title: 'Analysis', desc: 'Saved matches and charts over time.' },
   ];
-
-  function placeholder(event, url) {
-    if (!url) event.preventDefault();
-  }
 </script>
 
 <svelte:head>
   <title>BioBuzz Scorer | Luminary Robotics FTC 36633</title>
-  <meta name="robots" content="noindex, nofollow" />
   <meta name="description" content="BioBuzz Scorer, a scoring app for the FIRST Tech Challenge BIOBUZZ season, made by FTC Team 36633." />
 </svelte:head>
 
@@ -30,12 +20,7 @@
 
 {#snippet storeButtons()}
   <div class="stores">
-    <a
-      href={APP_STORE_URL || '#'}
-      class="store"
-      aria-label="Download on the App Store"
-      onclick={(e) => placeholder(e, APP_STORE_URL)}
-    >
+    <a href={APP_STORE_URL} class="store" aria-label="Download on the App Store">
       <svg class="store__icon" viewBox="0 0 24 24" aria-hidden="true">
         <path
           fill="currentColor"
@@ -48,12 +33,8 @@
       </span>
     </a>
 
-    <a
-      href={GOOGLE_PLAY_URL || '#'}
-      class="store"
-      aria-label="Get it on Google Play"
-      onclick={(e) => placeholder(e, GOOGLE_PLAY_URL)}
-    >
+    <!-- Swap for a link once the Play listing is live. -->
+    <span class="store store--soon" aria-label="Google Play, coming soon">
       <svg class="store__icon store__icon--android" viewBox="0 0 24 24" aria-hidden="true">
         <path
           fill="currentColor"
@@ -69,10 +50,10 @@
         />
       </svg>
       <span class="store__text">
-        <span class="store__small">Get it on</span>
+        <span class="store__small">Coming soon to</span>
         <span class="store__big">Google Play</span>
       </span>
-    </a>
+    </span>
   </div>
 {/snippet}
 
@@ -112,12 +93,11 @@
   <div class="container">
     {@render storeButtons()}
     <p class="legal">
-      <em>FIRST</em>®, <em>FIRST</em>® Tech Challenge, FTC®, BIOBUZZ™, and all accompanying
-      logos are trademarks of For Inspiration and Recognition of Science and Technology
-      (<em>FIRST</em>®). Used by special permission of <em>FIRST</em>, which is not overseeing,
-      involved with, or responsible for this product. RTX and the RTX logo are trademarks of
-      RTX Corporation. Apple and the App Store are trademarks of Apple Inc. Google Play and
-      Android are trademarks of Google LLC.
+      <em>FIRST</em>®, <em>FIRST</em>® Tech Challenge, and BIOBUZZ™ are registered trademarks of
+      <em>FIRST</em>® (www.firstinspires.org). These trademarks are used with special permission of
+      <em>FIRST</em>, which is not overseeing, involved with, or responsible for this activity.
+      ©<em>FIRST</em>. All rights reserved. RTX and the RTX logo are trademarks of RTX Corporation.
+      Apple and the App Store are trademarks of Apple Inc. Google Play is a trademark of Google LLC.
     </p>
   </div>
 </section>
@@ -180,6 +160,10 @@
 
   .store:hover { opacity: 0.85; }
   .store:active { transform: scale(0.98); }
+
+  .store--soon,
+  .store--soon:hover { opacity: 0.45; cursor: default; }
+  .store--soon:active { transform: none; }
 
   .store__icon {
     width: 26px;
