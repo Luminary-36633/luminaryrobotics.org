@@ -1,5 +1,6 @@
 <script>
   const APP_STORE_URL = 'https://apps.apple.com/app/id6811494340';
+  const GOOGLE_PLAY_URL = 'https://play.google.com/store/apps/details?id=org.luminary36633.biobuzzscorer';
 
   const screens = [
     { name: 'home', title: 'Home', desc: 'Start a game in one tap.' },
@@ -33,8 +34,7 @@
       </span>
     </a>
 
-    <!-- Swap for a link once the Play listing is live. -->
-    <span class="store store--soon" aria-label="Google Play, coming soon">
+    <a href={GOOGLE_PLAY_URL} class="store" aria-label="Get it on Google Play">
       <svg class="store__icon store__icon--android" viewBox="0 0 24 24" aria-hidden="true">
         <path
           fill="currentColor"
@@ -50,10 +50,10 @@
         />
       </svg>
       <span class="store__text">
-        <span class="store__small">Coming soon to</span>
+        <span class="store__small">Get it on</span>
         <span class="store__big">Google Play</span>
       </span>
-    </span>
+    </a>
   </div>
 {/snippet}
 
@@ -160,10 +160,6 @@
 
   .store:hover { opacity: 0.85; }
   .store:active { transform: scale(0.98); }
-
-  .store--soon,
-  .store--soon:hover { opacity: 0.45; cursor: default; }
-  .store--soon:active { transform: none; }
 
   .store__icon {
     width: 26px;
