@@ -140,7 +140,9 @@
 
   .hero__title .i {
     display: inline-block;
-    transform: scaleY(0.8);
+    /* The translate cancels the drop from scaling about the box bottom, which sits
+       below the baseline, so the stem stays exactly on the baseline. */
+    transform: translateY(-1.03%) scaleY(0.85);
     transform-origin: bottom;
   }
 
