@@ -12,6 +12,7 @@
 
 <svelte:head>
   <title>BioBuzz Scorer | Luminary Robotics FTC 36633</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,700&display=swap" rel="stylesheet" />
   <meta name="description" content="BioBuzz Scorer, a scoring app for the FIRST Tech Challenge BIOBUZZ season, made by FTC Team 36633." />
 </svelte:head>
 
@@ -61,7 +62,7 @@
 <section class="hero">
   <div class="hero__inner container">
     <div class="hero__content">
-      <h1 class="hero__title">BioBuzz Scorer</h1>
+      <h1 class="hero__title"><span class="b">B</span>io<span class="b">B</span>uzz Scorer</h1>
       <p class="hero__intro">Easily score matches on your phone.</p>
       {@render storeButtons()}
     </div>
@@ -128,6 +129,11 @@
     line-height: 1;
     color: var(--text);
     margin-bottom: var(--space-5);
+  }
+
+  .hero__title .b {
+    font-family: 'Bodoni Moda', 'Didot', serif;
+    font-weight: 700;
   }
 
   .hero__intro {
