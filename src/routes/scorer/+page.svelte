@@ -62,7 +62,7 @@
 <section class="hero">
   <div class="hero__inner container">
     <div class="hero__content">
-      <h1 class="hero__title"><span class="b">B</span>io<span class="b">B</span>uzz Scorer</h1>
+      <h1 class="hero__title"><span class="b">B</span><span class="i">i</span>o<span class="b">B</span>uzz Scorer</h1>
       <p class="hero__intro">Easily score matches on your phone.</p>
       {@render storeButtons()}
     </div>
@@ -134,6 +134,14 @@
   .hero__title .b {
     font-family: 'Bodoni Moda', 'Didot', serif;
     font-weight: 700;
+    /* At 1.135em the Bodoni B matches the Against capitals in height and width. */
+    font-size: 1.135em;
+  }
+
+  .hero__title .i {
+    display: inline-block;
+    transform: scaleY(0.8);
+    transform-origin: bottom;
   }
 
   .hero__intro {
