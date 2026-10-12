@@ -3,7 +3,7 @@
   import TeamCard from '$lib/components/TeamCard.svelte';
 
   const students = [
-    { name: 'Ishaan Desai',        role: 'Programming',       group: 'software', img: '/images/team/ishaan_new.png', bio: 'Autonomous and localization with Kalman filters.' },
+    { name: 'Ishaan Desai',        role: 'Programming/Outreach', group: 'software', img: '/images/team/ishaan_new.png', bio: 'Autonomous and localization with Kalman filters.' },
     { name: 'Antara Save',         role: 'Programming',       group: 'software', img: '/images/team/antara.jpg',     bio: 'Sensor integration and TeleOp control.' },
     { name: 'Nathan Li',           role: 'Programming',       group: 'software', img: '/images/team/nathan.png',     bio: 'Finite state machines and autonomous routines.' },
     { name: 'Bao Nguyen',          role: 'Design/Hardware',   group: 'hardware', img: '/images/team/bao.png',        bio: '' },
