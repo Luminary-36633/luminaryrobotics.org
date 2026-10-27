@@ -34,9 +34,15 @@
     },
     {
       label: 'Instagram',
-      value: '@luminary36633',
-      href: 'https://instagram.com/luminary36633',
+      value: '@36633luminary',
+      href: 'https://instagram.com/36633luminary',
       icon: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>`,
+    },
+    {
+      label: 'YouTube',
+      value: '@Luminary36633',
+      href: 'https://www.youtube.com/@Luminary36633',
+      icon: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="2" y="5" width="20" height="14" rx="4" stroke="currentColor" stroke-width="1.5"/><path d="M10 9.5v5l4.5-2.5L10 9.5z" fill="currentColor"/></svg>`,
     },
   ];
 </script>
